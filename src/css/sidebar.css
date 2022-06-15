@@ -1,0 +1,13 @@
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebarItem > .MuiSvgIcon-root {
+  padding: 20px;
+}
+
+.sidebarItem > h3 {
+  font-weight: 700;
+}

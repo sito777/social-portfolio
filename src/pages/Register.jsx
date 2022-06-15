@@ -1,6 +1,6 @@
 import "../style.css";
 import { useContext, useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
@@ -10,7 +10,7 @@ import bgPhoto from "../img/mathieu-stern-1zO4O3Z0UJA-unsplash.jpeg";
 import Button from "@mui/material/Button";
 import { Grid } from "@mui/material";
 
-const Login = () => {
+const Register = () => {
   const [error, setError] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -21,7 +21,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         dispatch({ type: "LOGIN", payload: user });
@@ -44,7 +44,7 @@ const Login = () => {
       }}
     >
       <Grid item xs={6}>
-        <h1>Login</h1>
+        <h1>Register</h1>
         <p>
           Assumenda ut ullam provident ea alias molestias dolorum. Qui ullam aut
           laborum repudiandae. Saepe non vel ratione illo. Commodi voluptates
@@ -88,7 +88,7 @@ const Login = () => {
               />
               <br />
               <Button variant="outlined" type="onSubmit">
-                login
+                Register
               </Button>
               {error && (
                 <span>
@@ -102,4 +102,4 @@ const Login = () => {
     </Grid>
   );
 };
-export default Login;
+export default Register;
