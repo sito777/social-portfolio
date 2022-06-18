@@ -1,3 +1,15 @@
+.sidebar {
+  border-right: 1px solid var(--grey);
+  flex: 0.3;
+  /* min-width: 250px; */
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.logo {
+  color: var(--brown);
+}
 .sidebarItem {
   display: flex;
   align-items: center;
@@ -6,6 +18,17 @@
 
 .sidebarItem > .MuiSvgIcon-root {
   padding: 20px;
+}
+
+.sidebarItem--active {
+  color: var(--brown);
+}
+
+.sidebarItem:hover {
+  background-color: var(--brown);
+  border-radius: 30px;
+  transition: color 100ms ease-in;
+  color: var(--white);
 }
 
 .sidebarItem > h3 {

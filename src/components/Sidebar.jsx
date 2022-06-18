@@ -5,15 +5,15 @@ import "../css/sidebar.css";
 
 function Sidebar() {
   return (
-    <div className="sidebar">
-      <p>
+    <header className="sidebar">
+      <p className="logo">
         <b>LOGO</b>
       </p>
-      <SidebarItem text="Home" />
+      <SidebarItem active text="Home" />
       <SidebarItem text="Explore" />
       <SidebarItem text="Notifications" />
       <SidebarItem text="Logout" />
-    </div>
+    </header>
   );
 }
 

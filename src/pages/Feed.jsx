@@ -2,6 +2,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import { db } from "../firebase/firebaseConfig";
+import {} from "../css/feed.css";
 
 function App() {
   const sendTweet = async (e) => {
@@ -12,13 +13,16 @@ function App() {
     });
   };
   return (
-    <>
-      <Sidebar />
-      <h1 className="text-3xl font-bold underline">Hello Feed!</h1>
+    <div className="feed">
+      <div className="feedHeader">Home</div>
+
+      {/* <ShareIdea/ > */}
+      {/* <ViewIdeas/ > */}
+      <h1 className="text-3xl font-bold underline">Hellso Feed!</h1>
       <form onSubmit={sendTweet} action="submit">
         <button type="submit">Tweet</button>
       </form>
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,13 @@
+.feed {
+  border-right: 1px solid var(--grey);
+  flex: 0.4;
+  min-width: fit-content;
+  overflow-y: scroll;
+}
+
+.feedHeader {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: var(--white);
+}

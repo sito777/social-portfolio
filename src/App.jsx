@@ -7,6 +7,9 @@ import ErrorPage from "./pages/ErrorPage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
 import { useContext } from "react";
+import Sidebar from "./components/Sidebar";
+import SideColum from "./components/SideColum";
+import "./style.css";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -16,37 +19,41 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
-        <Route
-          path="/"
-          element={
-            <RequireAuth>
-              <Feed />
-            </RequireAuth>
-          }
-        />
-        <Route
-          path="/explore"
-          element={
-            <RequireAuth>
-              <Explore />
-            </RequireAuth>
-          }
-        />
-        <Route
-          path="/notifications"
-          element={
-            <RequireAuth>
-              <Notifications />
-            </RequireAuth>
-          }
-        />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="app">
+      <Sidebar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+          <Route
+            path="/"
+            element={
+              <RequireAuth>
+                <Feed />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/explore"
+            element={
+              <RequireAuth>
+                <Explore />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <RequireAuth>
+                <Notifications />
+              </RequireAuth>
+            }
+          />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </BrowserRouter>
+      <SideColum />
+    </div>
   );
 }
 
