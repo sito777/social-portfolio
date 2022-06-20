@@ -1,0 +1,18 @@
+.inputBox {
+  display: flex;
+  padding: 15px;
+  border-bottom: 5px solid var(--bgGrey);
+}
+
+.inputBox > form {
+  padding: 15px;
+}
+
+.ideaInput > input {
+  border: none;
+  flex: 1;
+}
+
+.ideaButton {
+  margin-left: auto;
+}

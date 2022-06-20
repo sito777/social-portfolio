@@ -1,0 +1,32 @@
+.idea {
+  /* border-top: .5px solid var(--bgGrey); */
+  border-bottom: 1px solid var(--bgGrey);
+}
+
+.ideaHead {
+  display: flex;
+  margin: 15px;
+  align-items: center;
+}
+
+.ideaHeadText {
+  margin-left: 15px;
+}
+
+.ideaUsername {
+  font-weight: bold;
+}
+
+.ideaPost {
+  margin: 15px;
+}
+
+.ideaFooter {
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ideaFooter > .footerIcon:hover {
+  color: var(--brown);
+}

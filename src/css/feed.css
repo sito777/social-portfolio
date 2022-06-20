@@ -1,8 +1,14 @@
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
 .feed {
-  border-right: 1px solid var(--grey);
+  border-right: 1px solid var(--bgGrey);
   flex: 0.4;
   min-width: fit-content;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .feedHeader {
@@ -10,4 +16,7 @@
   top: 0;
   z-index: 99;
   background-color: var(--white);
+  border: 1px solid var(--bgGrey);
+  padding: 15px;
+  font-weight: 700;
 }

@@ -1,27 +1,18 @@
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import React from "react";
-import Sidebar from "../components/Sidebar";
-import { db } from "../firebase/firebaseConfig";
-import {} from "../css/feed.css";
+import "../css/feed.css";
+import ShareIdea from "../components/ShareIdea";
+import ViewIdeas from "../components/ViewIdeas";
 
 function App() {
-  const sendTweet = async (e) => {
-    e.preventDefault();
-    await addDoc(collection(db, "feed"), {
-      tweet: "testxxxje",
-      timeStamp: serverTimestamp(),
-    });
-  };
   return (
     <div className="feed">
-      <div className="feedHeader">Home</div>
+      <div className="feedHeader">
+        <p>Home</p>
+      </div>
 
-      {/* <ShareIdea/ > */}
-      {/* <ViewIdeas/ > */}
-      <h1 className="text-3xl font-bold underline">Hellso Feed!</h1>
-      <form onSubmit={sendTweet} action="submit">
-        <button type="submit">Tweet</button>
-      </form>
+      <ShareIdea />
+
+      <ViewIdeas />
     </div>
   );
 }

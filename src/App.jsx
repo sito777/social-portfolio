@@ -20,8 +20,8 @@ function App() {
 
   return (
     <div className="app">
-      <Sidebar />
       <BrowserRouter>
+        <Sidebar />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/Register" element={<Register />} />

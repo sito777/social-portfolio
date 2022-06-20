@@ -1,3 +1,50 @@
 .sideColum {
   flex: 0.3;
 }
+
+.search {
+  background-color: var(--bgGrey);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 10px;
+}
+
+.search > input {
+  /* border-color: var(--grey); */
+  border: none;
+  background-color: var(--bgGrey);
+  /* border-style: solid; */
+}
+
+.search > .icon {
+  color: var(--grey);
+}
+
+.trend {
+  background-color: var(--bgGrey);
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.trend > .trendItem {
+  margin: 20px 0px;
+}
+
+.trend > .trendItem > .trendNumber {
+  color: var(--grey);
+  font-size: 12px;
+}
+
+.trend > .trendItem > .trendHashtag {
+  font-weight: bold;
+  margin: 5px 0px;
+}
+
+.trend > .trendItem > .trendQuatity {
+  color: var(--grey);
+  font-size: 12px;
+}
