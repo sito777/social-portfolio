@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function SidebarItem({ active, text, link }) {
+function SidebarItem({ active, text, Icon }) {
   return (
     // <Link to={link}>
     <div className={`sidebarItem ${active && "sidebarItem--active"}`}>
-      {/* <Icon /> */}
+      <Icon />
       <h3>{text}</h3>
     </div>
     // </Link>

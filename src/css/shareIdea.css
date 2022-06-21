@@ -8,6 +8,10 @@
   padding: 15px;
 }
 
+.ideaInput {
+  margin-bottom: 10px;
+}
+
 .ideaInput > input {
   border: none;
   flex: 1;

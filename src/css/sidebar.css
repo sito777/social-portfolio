@@ -9,6 +9,8 @@
 
 .logo {
   color: var(--brown);
+  margin-bottom: 15px;
+  padding-left: 15px;
 }
 .sidebarItem {
   display: flex;
@@ -21,7 +23,7 @@
 }
 
 .sidebarItem > .MuiSvgIcon-root {
-  padding: 20px;
+  padding: 0px 15px;
 }
 
 .sidebarItem--active {
