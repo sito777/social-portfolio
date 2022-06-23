@@ -1,29 +1,20 @@
-import React, { useState } from "react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "../firebase/firebaseConfig";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import "../css/shareIdea.css";
 
-function ShareIdea() {
+function ShareIdea({ sendIdea }) {
   const [shareIdea, setShareIdea] = useState("");
   const [ideaImg, setIdeaImg] = useState("");
 
-  const sendIdea = async (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
-    await addDoc(collection(db, "idea's"), {
-      displayName: "Jelly",
-      username: "JellyFish",
-      idea: shareIdea,
-      img: ideaImg,
-      time: serverTimestamp(),
-      profilePicture:
-        "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-    });
+    sendIdea(shareIdea, ideaImg);
 
     setShareIdea("");
     setIdeaImg("");
   };
+
   return (
     <div className="shareIdea">
       <div className="inputBox">
@@ -48,7 +39,7 @@ function ShareIdea() {
             </div>
           </div>
           <Button
-            onClick={sendIdea}
+            onClick={handleClick}
             className="ideaButton"
             type="submit"
             variant="outlined"
